@@ -11,7 +11,9 @@ export default {
 
 <template>
     <header>
-        HEADER
+        <h1 class="text-center">
+            PlanetPress
+        </h1>
     </header>
 </template>
 
