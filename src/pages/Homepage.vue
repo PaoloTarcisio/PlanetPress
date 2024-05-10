@@ -1,11 +1,15 @@
 <script>
 import axios from 'axios';
+import SingleArticle from '../components/SingleArticle.vue';
 
 export default {
     data() {
         return {
             articles:[],
         };
+    },
+    components: {
+        SingleArticle,
     },
     created() {
         axios
@@ -32,26 +36,12 @@ export default {
     <section>
         <div class="container">
             <div v-for="(article, index) in this.articles" :key="index" class="my-card m-3 p-3">
-                <div>
-                    <h3>
-                        {{ article.title }}
-                    </h3>
-                </div>
-                <hr>
-                <div>
-                    <h6>
-                        {{ article.author }}
-                    </h6>
-                </div>
-                <hr>
-                <div>
-                    {{ article.content }}
-                </div>
-                <hr>
-                <div>
-                    <a :href="article.url">Vai all'articolo</a>
-                    {{  }}
-                </div>
+                <SingleArticle
+                    :title="article.title"
+                    :author="article.author"
+                    :content="article.content"
+                    :url="article.url"
+                />
             </div>
         </div>
     </section>
