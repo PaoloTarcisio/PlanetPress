@@ -10,7 +10,7 @@ export default {
         title: String,
         author: String,
         content: String,
-        image:String,
+        image: String,
         url: String,
     }
 }
@@ -24,7 +24,9 @@ export default {
                 {{ title }}
             </h4>
         </div>
-        <div>
+        <div
+        class="card-img mt-3">
+
             <img :src="image" alt="">
         </div>
         
@@ -36,7 +38,8 @@ export default {
             </h6>
         </div>
         
-        <div>
+        <div 
+        class="card-content">
                 {{ content }}
         </div>
         
@@ -45,7 +48,7 @@ export default {
             <a
             :href="url"
             class="link-to-article p-2">
-                Vai all'articolo
+                Vai all'articolo completo
             </a>
         </div>
     </div>
@@ -54,29 +57,52 @@ export default {
 
 <style lang="scss" scoped>
 .my-card {
-    border: 1px solid black;
-    border-radius: 10px;
+    background-color: white;
+    box-shadow: 4px 4px 5px lightgray;
+    border: 1px solid lightgray;
+    border-radius: 4px;
     
     .article-title
     {
         border-bottom: 1px solid black;
+        height: 80px;
     }
 
-    img
+    .card-img
     {
-        width: 100%;
+        height: 200px;
+        img
+        {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .card-content
+    {
+        height: 150px;
+        overflow: scroll;
+    }
+
+    @media screen and (max-width: 425px) {
+        .card-content{
+            height: 100px;
+        }
     }
 
     .link-to-article
     {
         background-color: lightblue;
         border-radius: 5px;
-        color: white;
+        color: black;
         text-decoration: none;
+        transition: 0.6s;
     }
     .link-to-article:hover
     {
         background-color: blue;
+        color: white;
     }
   }
 

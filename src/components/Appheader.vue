@@ -3,7 +3,7 @@
 export default {
     data() {
         return {
-
+            
         };
     },
 }
@@ -11,11 +11,11 @@ export default {
 
 <template>
     <header>
-        <h1 class="text-center">
+        <h1 class="text-center mt-3">
             PlanetPress
         </h1>
     </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>
