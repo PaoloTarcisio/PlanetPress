@@ -34,9 +34,9 @@ export default {
     <div class="my-card p-2">
         <div 
         class="article-title p-2">
-            <h4>
+            <h5>
                 {{ title }}
-            </h4>
+            </h5>
         </div>
         <div
         class="card-img mt-3"

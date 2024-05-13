@@ -14,14 +14,14 @@ export default {
         
         // funzione che cambia categoria scelta dall'utente  / default = business
         changeCategory(itemCountry) {
-            console.log(itemCountry);
+            // console.log(itemCountry);
             store.settedCategory = itemCountry;
             this.getValue();
         },
         
         // funzione che cambia nazione scelta dall'utente  / default = it italia
         changeCountry(itemNation) {
-            console.log(itemNation);
+            // console.log(itemNation);
             store.settedCountry = itemNation;
             this.getValue();
         },
@@ -38,8 +38,11 @@ export default {
                     }
                 })
                 .then((response) => {
-                    console.log(response.data.articles);
+                    // console.log(response.data.articles);
                     store.searchedByText = response.data.articles
+                })
+                .catch((error) => {
+                    console.log(error.message);
                 });
         }
     },

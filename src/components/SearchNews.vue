@@ -23,7 +23,7 @@ export default {
                     },
                 })
                 .then((response) => {
-                    console.log(response.data.articles);
+                    // console.log(response.data.articles);
                     store.searchedByText=response.data.articles;
                 })
                 .catch((error) => {
