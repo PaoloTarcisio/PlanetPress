@@ -9,9 +9,23 @@ export default {
     props: {
         title: String,
         author: String,
+        date: String,
         content: String,
         image: String,
         url: String,
+    },
+    methods: {
+        correctDate(date) {
+            let fixedDate = "";
+            let newdate = date.slice(0,10);
+            let years = newdate.slice(0,4);
+            let months = newdate.slice(5,7);
+            let days = newdate.slice(8,10);
+            // console.log(fixedDate);
+    
+            return fixedDate = days + "-" + months + "-" + years;
+    
+        }
     }
 }
 </script>
@@ -25,22 +39,29 @@ export default {
             </h4>
         </div>
         <div
-        class="card-img mt-3">
+        class="card-img mt-3"
+        v-if='image'
+        >
 
             <img :src="image" alt="">
         </div>
         
         <div 
         v-if="author"
-        class="p-2">
+        class="article-autor p-2">
             <h6>
                 Autore: {{ author }}
             </h6>
         </div>
+
+        <div class="p-2">
+            Data di pubblicazione: {{ correctDate(date) }}
+        </div>
         
         <div 
+        v-if="content"
         class="card-content">
-                {{ content }}
+            {{ content }}
         </div>
         
         <div
@@ -62,10 +83,10 @@ export default {
     border: 1px solid lightgray;
     border-radius: 4px;
     
-    .article-title
+    .article-title,
+    .article-autor
     {
         border-bottom: 1px solid black;
-        height: 80px;
     }
 
     .card-img
