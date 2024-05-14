@@ -39,7 +39,7 @@ export default {
             <div class="row">
   
               <!-- stampo gli articoli prendendoli da searchedByText nello store -->
-              <div v-for="(article, index) in store.searchedByText" :key="index" class="p-3 col-lg-6 col-md-6 col-sm-12">
+              <div v-for="(article, index) in store.searchedByText" :key="index" class="p-3 col-lg-4 col-md-6 col-sm-12">
                 <SingleArticle
                   :title="article.title"
                   :author="article.author"

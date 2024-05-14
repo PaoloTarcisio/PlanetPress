@@ -4,7 +4,7 @@ export const store =reactive ({
     searchText: '',
     searchedByText: [],
     settedCategory: 'health',
-    settedCountry: '',
+    settedCountry: 'it',
     categories:[
         "business",
         "entertainment",

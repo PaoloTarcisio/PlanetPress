@@ -82,6 +82,8 @@ export default {
     box-shadow: 4px 4px 5px lightgray;
     border: 1px solid lightgray;
     border-radius: 4px;
+    height: 500px;
+    overflow: scroll;
     
     .article-title,
     .article-autor

@@ -56,7 +56,7 @@ export default {
 
 <template>
     <aside class="pt-1">
-        <div class="accordion m-3 mb-0" id="accordionExample">
+        <div class="accordion m-3" id="accordionExample">
             
             <!-- categorie -->
             <div class="accordion-item">
@@ -106,7 +106,6 @@ export default {
 
 aside
 {
-
     .accordion
     {
         .accordion-item
@@ -116,6 +115,8 @@ aside
             {
                 display: flex;
                 flex-wrap: wrap;
+                max-height: 420px;
+
         
                 button
                 {
@@ -127,6 +128,7 @@ aside
                     
                     background-color: transparent;
                     border: none;
+
                 }
             }
 
