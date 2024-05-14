@@ -55,37 +55,47 @@ export default {
 </script>
 
 <template>
-    <aside>
-        <!-- categorie -->
-        <div 
-        class="categories p-3">
-            <h4>
-                Categorie:
-            </h4>
-            <div 
-            v-for="(category, index) in store.categories" :key="index">
-                <button
-                @click="changeCategory(category)"
-                class="m-1 btn">
-                    {{ category }} 
-                </button>
+    <aside class="pt-1">
+        <div class="accordion m-3 mb-0" id="accordionExample">
+            
+            <!-- categorie -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Categorie:
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="categories">
+                            <button v-for="(category, index) in store.categories" :key="index"
+                            @click="changeCategory(category)"
+                            class="m-1 btn">
+                                {{ category }} 
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- nazioni -->
-        <div 
-        class="p-3">
-            <h4>
-                Nazioni:
-            </h4>
-            <div class="nations">
-                <div v-for="(nation, index) in store.nations" :key="index" >
-                    <button 
-                    @click="changeCountry(index)"
-                    
-                    class="p-1 nation-buttons">
-                        {{ nation }}
-                    </button>,
+            <!-- nazioni -->
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Nazioni:
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="nations">
+                            <button v-for="(nation, index) in store.nations" :key="index"
+                            @click="changeCountry(index)"
+                            class="p-1 nation-buttons">
+                                {{ nation }}
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,26 +103,55 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-    .categories,
-    .nations
+
+aside
+{
+
+    .accordion
     {
-        display: flex;
-        flex-wrap: wrap;
-
-        button
+        .accordion-item
         {
-            border: 1px solid black;
-            border-radius: 30px;
-        }
+            .categories,
+            .nations
+            {
+                display: flex;
+                flex-wrap: wrap;
+        
+                button
+                {
+                    border: 1px solid black;
+                    border-radius: 30px;
+                }
+        
+                .nation-buttons {
+                    
+                    background-color: transparent;
+                    border: none;
+                }
+            }
 
-        .nation-buttons {
-            background-color: transparent;
-            border: none;
-            border-radius: none;
+            @media screen and (max-width: 991px) {
+                
+                #collapseTwo .accordion-body
+                {
+                    max-height: 200px;
+                    overflow: scroll;
+                }
+            }
+
+
+            .accordion-button:not(collapsed)
+            {
+                background-color: white;
+            }
+
+            .accordion-button:focus
+            {
+                box-shadow: none;
+                border-bottom: 1px solid lightgray;
+            }
+            
         }
     }
-    .agencies{
-        display: flex;
-        flex-wrap: wrap;
-    }
+}
 </style>

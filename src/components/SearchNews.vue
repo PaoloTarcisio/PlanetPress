@@ -37,31 +37,91 @@ export default {
 <template>
     <section class="search-form-section">
         <h2
-        class="text-center m-3">
+        class="text-center p-3 m-0">
             Cerca le notizie che più ti interessano!
         </h2>
         <form 
         @submit.prevent="SearchInApi()" 
         id="SearchNewsForm"
-        class="row">
-            <div class="col-lg-8 col-md-8 col-sm-12">
-                <input 
-                v-model="store.searchText" 
-                type="text" 
-                placeholder="Inserisci la parola chiave della notizia che stai cercando"
-                class="w-50 m-3 rounded p-1">
+        >
+        <div class="form-content">
+            <div class="form-input">
+                    <input 
+                    v-model="store.searchText" 
+                    type="text" 
+                    placeholder="Inserisci la parola chiave della notizia che stai cercando"
+                    class="m-2 rounded p-1">
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <button
-                id="form-button"
-                class="p-1 rounded">
-                Cerca
-                </button>
+            <div class="form-button">
+                <div>
+                    <button
+                    class="p-1 m-2 rounded">
+                    Cerca
+                    </button>
+                </div>
             </div>
+        </div>
         </form>
     </section>
 </template>
 
 <style lang="scss" scoped>
+section
+{
+    height: 140px;
+    vertical-align: middle;
+    @media screen and (max-width: 991px) {
+        section
+        {
+            height: 180px;
+        }
+    }
 
+    #SearchNewsForm .row
+    {
+        margin: 0;
+
+    }
+    .form-input
+    {
+        width: 60%;
+
+        input
+        {
+            width: 90%;
+        }
+    }
+
+    .form-button
+    {
+        width: 10%;
+
+        button
+        {
+            width: 100%;
+        }
+    }
+    
+    @media screen and (max-width: 990px) {
+        .form-input,
+        .form-button
+        {
+            margin: 0 auto;
+        }
+        .form-input
+        {
+            text-align: center;
+        }
+    }
+
+    @media screen and (min-width: 991px) {
+        .form-content
+        {
+            display: flex;
+            justify-content: center;
+            vertical-align: middle;
+        }
+    }
+
+}
 </style>

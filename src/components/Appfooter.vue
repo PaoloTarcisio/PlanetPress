@@ -9,9 +9,9 @@ export default {
 </script>
 
 <template>
-    <footer>
+    <!-- <footer>
         FOOTER
-    </footer>
+    </footer> -->
 </template>
 
 <style scoped>
