@@ -3,7 +3,7 @@ import { reactive } from "vue";
 export const store =reactive ({
     searchText: '',
     searchedByText: [],
-    settedCategory: 'health',
+    settedCategory: 'general',
     settedCountry: 'it',
     categories:[
         "business",

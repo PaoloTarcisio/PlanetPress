@@ -32,20 +32,24 @@ export default {
 
 <template>
     <div class="my-card p-2">
+
+        <!-- titolo articolo -->
         <div 
         class="article-title p-2">
             <h5>
                 {{ title }}
             </h5>
         </div>
+
+        <!-- immagine articolo -->
         <div
         class="card-img mt-3"
         v-if='image'
         >
-
-            <img :src="image" alt="">
+            <img :src="image" alt="img">
         </div>
         
+        <!-- autore articolo -->
         <div 
         v-if="author"
         class="article-autor p-2">
@@ -54,18 +58,21 @@ export default {
             </h6>
         </div>
 
+        <!-- data di pubblicazione articolo -->
         <div class="p-2">
             Data di pubblicazione: {{ correctDate(date) }}
         </div>
         
+        <!-- descrizione articolo -->
         <div 
         v-if="content"
-        class="card-content">
+        class="card-content pb-3">
             {{ content }}
         </div>
         
+        <!-- link all articolo completo-->
         <div
-        class="text-center p-3">
+        class="text-center p-3 card-link">
             <a
             :href="url"
             class="link-to-article p-2">
@@ -114,19 +121,27 @@ export default {
         }
     }
 
-    .link-to-article
+    .card-link
     {
-        background-color: lightblue;
-        border-radius: 5px;
-        color: black;
-        text-decoration: none;
-        transition: 0.6s;
+        position: sticky;
+        bottom: 5px;
+
+        .link-to-article
+        {
+            background-color: lightblue;
+            border-radius: 5px;
+            color: black;
+            text-decoration: none;
+            transition: 0.6s;
+        }
+    
+        .link-to-article:hover
+        {
+            background-color: blue;
+            color: white;
+        }
     }
-    .link-to-article:hover
-    {
-        background-color: blue;
-        color: white;
-    }
-  }
+
+}
 
 </style>

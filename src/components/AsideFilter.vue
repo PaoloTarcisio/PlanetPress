@@ -116,6 +116,7 @@ aside
                 display: flex;
                 flex-wrap: wrap;
                 max-height: 420px;
+                overflow: scroll;
 
         
                 button
